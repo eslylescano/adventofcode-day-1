@@ -38,6 +38,48 @@ describe('sumOfCalibrationValues', () => {
     
   });
 
+  describe('sumOfCalibrationValues Part Two', () => {
+    it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['two1nine'];
+        expect(sumOfCalibrationValues(document)).toBe(29);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['eightwothree'];
+        expect(sumOfCalibrationValues(document)).toBe(83);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['abcone2threexyz'];
+        expect(sumOfCalibrationValues(document)).toBe(13);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['xtwone3four'];
+        expect(sumOfCalibrationValues(document)).toBe(24);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['4nineeightseven2'];
+        expect(sumOfCalibrationValues(document)).toBe(42);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['zoneight234'];
+        expect(sumOfCalibrationValues(document)).toBe(14);
+      });
+
+      it('returns the sum of calibration values for a single line case 1', () => {
+        const document = ['7pqrstsixteen'];
+        expect(sumOfCalibrationValues(document)).toBe(76);
+      });
+
+      it('returns the sum of calibration values for lines with spelled-out digits', () => {
+        const document = ['two1nine', 'eightwothree', 'abcone2threexyz', 'xtwone3four', '4nineeightseven2', 'zoneight234', '7pqrstsixteen'];
+        expect(sumOfCalibrationValues(document)).toBe(281);
+      });
+  })
+
   describe('Calculate number value', () => {
     it('handles the input file', () => {
         fs.readFile(filePath, 'utf8', (err, data) => {
