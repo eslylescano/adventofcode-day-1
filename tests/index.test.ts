@@ -1,4 +1,9 @@
 import { sumOfCalibrationValues } from "../src";
+import * as fs from 'fs';
+import * as path from 'path';
+const currentDir = path.dirname(__filename);
+const filePath = path.join(currentDir, 'input.txt');
+
 
 describe('sumOfCalibrationValues', () => {
     it('returns the sum of calibration values for a single line case 1', () => {
@@ -32,3 +37,19 @@ describe('sumOfCalibrationValues', () => {
       });
     
   });
+
+  describe('Calculate number value', () => {
+    it('handles the input file', () => {
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) {
+                console.error('Error reading the file:', err);
+                return;
+            }
+
+            const lines = data.split('\n');
+            const sum = sumOfCalibrationValues(lines);
+            expect(sum).toBeDefined();
+            console.log(sum);
+        });
+      });
+  })
