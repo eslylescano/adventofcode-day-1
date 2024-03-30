@@ -44,32 +44,32 @@ describe('sumOfCalibrationValues', () => {
         expect(sumOfCalibrationValues(document)).toBe(29);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 2', () => {
         const document = ['eightwothree'];
         expect(sumOfCalibrationValues(document)).toBe(83);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 3', () => {
         const document = ['abcone2threexyz'];
         expect(sumOfCalibrationValues(document)).toBe(13);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 4', () => {
         const document = ['xtwone3four'];
         expect(sumOfCalibrationValues(document)).toBe(24);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 5', () => {
         const document = ['4nineeightseven2'];
         expect(sumOfCalibrationValues(document)).toBe(42);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 6', () => {
         const document = ['zoneight234'];
         expect(sumOfCalibrationValues(document)).toBe(14);
       });
 
-      it('returns the sum of calibration values for a single line case 1', () => {
+      it('returns the sum of calibration values for a single line case 7', () => {
         const document = ['7pqrstsixteen'];
         expect(sumOfCalibrationValues(document)).toBe(76);
       });
