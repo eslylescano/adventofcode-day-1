@@ -45,7 +45,6 @@ describe('sumOfCalibrationValues', () => {
                 console.error('Error reading the file:', err);
                 return;
             }
-
             const lines = data.split('\n');
             const sum = sumOfCalibrationValues(lines);
             expect(sum).toBeDefined();
