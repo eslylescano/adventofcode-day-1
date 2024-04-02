@@ -11,8 +11,9 @@ export function sumOfCalibrationValues(document: string[]): number {
   }
 
   function extractFirstNumber(text:string):number {
-    const convertedText = replaceWordsWithNumbers(text);
-    const match = convertedText.match(/\d/);
+    const convertedText1 = replaceDoubleWordsWithNumbers(text);
+    const convertedText2 = replaceWordsWithNumbers(convertedText1);
+    const match = convertedText2.match(/\d/);
     if (match) {
         return parseInt(match[0]);
     } else {
@@ -21,14 +22,34 @@ export function sumOfCalibrationValues(document: string[]): number {
 }
 
 function extractLastNumber(text:string):number {
-    const convertedText = replaceWordsWithNumbers(text);
-    const match = convertedText.match(/\d(?!.*\d)/);
+    const convertedText1 = replaceDoubleWordsWithNumbers(text);
+    const convertedText2 = replaceWordsWithNumbers(convertedText1);
+    const match = convertedText2.match(/\d(?!.*\d)/);
     if (match) {
         return parseInt(match[0]);
     } else {
         return 0;
     }
 }
+function replaceDoubleWordsWithNumbers(str: string): string {
+    const replacements: { [key: string]: string } = {
+        "oneight": "18",
+        "twone": "21",
+        "threeight": "38",
+        "fiveight": "58",
+        "sixeven": "67",
+        "sevenine": "79",
+        "eightwo": "82",
+        "eighthree": "83",
+        "nineight": "98"
+    };
+
+    const pattern = new RegExp(Object.keys(replacements).join('|'), 'gi');
+
+
+    return str.replace(pattern, matched => replacements[matched.toLowerCase()] || matched);
+}
+
 function replaceWordsWithNumbers(str: string): string {
     const replacements: { [key: string]: string } = {
         "one": "1",

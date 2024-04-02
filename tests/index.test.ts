@@ -74,6 +74,16 @@ describe('sumOfCalibrationValues', () => {
         expect(sumOfCalibrationValues(document)).toBe(76);
       });
 
+      it('returns the sum of calibration values for a single line case 8', () => {
+        const document = ['2911threeninesdvxvheightwobm'];
+        expect(sumOfCalibrationValues(document)).toBe(22);
+      });
+
+      it('returns the sum of calibration values for a single line case 9', () => {
+        const document = ['jrnf3'];
+        expect(sumOfCalibrationValues(document)).toBe(33);
+      });
+
       it('returns the sum of calibration values for lines with spelled-out digits', () => {
         const document = ['two1nine', 'eightwothree', 'abcone2threexyz', 'xtwone3four', '4nineeightseven2', 'zoneight234', '7pqrstsixteen'];
         expect(sumOfCalibrationValues(document)).toBe(281);
